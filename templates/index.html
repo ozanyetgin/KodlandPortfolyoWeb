@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <title>Portföy</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="header__nav main-nav">
+        <ul class="main-nav__list main-list">
+          <li class="main-list__item list-item">
+            <a class="list-item__link" href="#home">Ana Sayfa</a>
+          </li>
+          <li class="main-list__item list-item">
+            <a class="list-item__link" href="#about">Hakkımda</a>
+          </li>
+          <li class="main-list__item list-item">
+            <a class="list-item__link" href="#skills">Projelerim</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+      <!-- Önizleme bölümü -->
+      <section class="main__home home" id="home">
+        <h1 class="home__title">Ozan Yetgin</h1>
+        <p class="home__subtitle">Tasarımcı, Python Programcısı, Web Geliştiricisi</p>
+      </section>
+      <!-- Hakkımda bölümü -->
+      <section class="main__about about" id="about">
+        <h2 class="about__title">Hakkımda</h2>
+        <div class="about__info info-block">
+          <p class="info-block__text">
+            Merhaba ben Ozan Yetgin. 11. sınıf öğrencisiyim. Callister FRC #9024 robotik takımımızın tasarım (CAD) kaptanıyım.
+            <br><br>Aynı zamanda kendimi Python ve yapay zeka alanlarında geliştirmekteyim. Python ve web geliştirmeyle ilgili projelerimi aşağıda bulabilirsiniz.
+            <br><br>Hobi olarak amatör video düzenleme ve müzik ile uğraşmaktayım.
+          </p>
+          <img
+            class="info-block__img"
+            src="../static/img/profile.png"
+            alt="me"
+            width="250"
+            height="250"
+          />
+        </div>
+      </section>
+      <!-- Beceriler bölümü -->
+      <section class="main__skills skills" id="skills">
+        <h2 class="skills__title">Projelerim</h2>
+        <form action="/" method="POST">
+          <ul class="skills__list skills-list">
+            
+            <li class="skills-list__skill skill">
+              <img
+                class="skill__img"
+                src="../static/img/db.webp"
+                alt="python"
+                width="150"
+                height="150"
+              />
+              <span class="skill__info">Günlük Tutmanızı Sağlayan Web Sitesi</span>
+              <input class="skill__button" type="submit" name="button_db" value="PROJE DETAYLARI">
+            </li>
+            
+            <li class="skills-list__skill skill">
+              <img
+                class="skill__img"
+                src="../static/img/discord.png"
+                alt="discord"
+                width="150"
+                height="150"
+              />
+              <span class="skill__info">ZanoBot 2 - Discord Botu</span>
+              <input class="skill__button" type="submit" name="button_discord" value="PROJE DETAYLARI">
+            </li>
+            
+            <li class="skills-list__skill skill">
+              <img
+                class="skill__img"
+                src="../static/img/html.png"
+                alt="html"
+                width="150"
+                height="150"
+              />
+              <span class="skill__info">Teknoloji Bağımlılığı Sitesi</span>
+              <input class="skill__button" type="submit" name="button_html" value="PROJE DETAYLARI">
+            </li>
+            
+            <li class="skills-list__skill skill">
+              <img
+                class="skill__img"
+                src="../static/img/python.png"
+                alt="SQL"
+                width="150"
+                height="150"
+              />
+              <span class="skill__info">Parola Oluşturucu</span>
+              <input class="skill__button" type="submit" name="button_python" value="PROJE DETAYLARI">
+            </li>
+          
+          </ul>
+        </form>
+        {% if button_db%}
+          <div class="skills__project project" id="project">
+              <img class="project__img" src="../static/img/gunluksspython.png" alt="proje" width="500">
+              <a class="project__link" target="_blank" href="https://github.com/ozanyetgin/ZanoDiaryWeb">GitHub Kodlarına Bak</a>
+              <a class="project__link" target="_blank" href="https://zano24.pythonanywhere.com">Günlüğü Kullan</a>
+          </div>
+        {% endif %}
+
+        {% if button_discord%}       
+          <div class="skills__project project" id="project">
+            <img class="project__img" src="../static/img/discordsspython.png" alt="proje" width="500">
+            <a class="project__link" target="_blank" href="">GitHub Kodlarına Bak</a>
+            <a class="project__link" target="_blank" href="https://zano24.pythonanywhere.com">Botu Kullan</a>
+          </div>
+        {% endif %}
+
+        {% if button_html%}       
+          <div class="skills__project project" id="project">
+            <img class="project__img" src="../static/img/bagimlilik_ss_html.png" alt="proje" width="500">
+            <a class="project__link" target="_blank" href="https://github.com/ozanyetgin/BagimlilikWebSitesi">GitHub Kodlarına Bak</a>
+          </div>
+        {% endif %}
+
+        {% if button_python%}       
+        <div class="skills__project project" id="project">
+          <img class="project__img" src="../static/img/passgen_sspython.png" alt="proje" width="500">
+          <a class="project__link" target="_blank" href="https://github.com/ozanyetgin/KodlandZano/blob/main/pass_creator.py">GitHub Kodlarına Bak</a>
+        </div>
+        {% endif %}
+
+      </section>
+      <!-- Geri bildirim formu -->
+      <section class="main__feedback feedback" id="feedback">
+        <h2 class="feedback__title">Geri Bildirim (Veriler şimdilik Toplanmıyor)</h2>
+        <form action="" method="POST" class="feedback__form form">
+          <label for="email">
+            <input type="email" class="form__input" name="email" id="email" placeholder="E-Mailinizi Ekleyin" required>
+          </label>
+          <label for="text">
+            <textarea name="text" class="form__input" id="text" cols="70" rows="10" required placeholder="Geri Bildiriminizi Belirtin"></textarea>
+          </label>
+          <button class="form__button" type="submit">Gönder</button>
+        </form>
+      </section>
+    </main>
+    <!-- Sosyal medya bağlantıları için bir alt bilgi -->
+    <footer>
+
+    </footer>
+  </body>
+</html>
